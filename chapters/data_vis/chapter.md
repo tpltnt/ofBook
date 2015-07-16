@@ -79,7 +79,9 @@ JSON files also are parsed using an oF addon called [ofxJSON](https://github.com
 
 ### Example - Visualizing Time Series Plot
 
-**Step 1 Acquire:** This section works through an example of a data visualization of US population data downloaded from the United States Census service here: http://www.nber.org/data/census-decennial-population.html
+This section works through an example of a data visualization of US population data.
+
+**Step 1 Acquire:** The US population data can be downloaded from the [United States Census service](http://www.nber.org/data/census-decennial-population.html). Get the file named "[cencounts.csv](http://www.nber.org/census/pop/cencounts.csv)".
 
 **Step 2 Parse and Filter:** Open this file in a spreadsheet program and inspect its contents. You will see that there is population data for all the regions of the USA from 1900-1990. This example visualizes the total population data and data from New York, Louisiana and Alabama so we must construct the data file with only the data from those particular states. You will want to copy and past the selected data into a new spreadsheet so that you are working with a file structure that looks like Figure 1. If you are working in Excel to parse the data, this program has a useful way of transposing the table. Copy a row from the original spreadsheet, and then paste it into your new file by selecting the "Paste Special" option in the Edit menu and selecting "Transpose" before hitting ok. You can delete the data labelled 'fips' in this file.
 
