@@ -83,13 +83,30 @@ This section works through an example of a data visualization of US population d
 
 **Step 1 Acquire:** The US population data can be downloaded from the [United States Census service](http://www.nber.org/data/census-decennial-population.html). Get the file named "[cencounts.csv](http://www.nber.org/census/pop/cencounts.csv)".
 
-**Step 2 Parse and Filter:** Open this file in a spreadsheet program and inspect its contents. You will see that there is population data for all the regions of the USA from 1900-1990. This example visualizes the total population data and data from New York, Louisiana and Alabama so we must construct the data file with only the data from those particular states. You will want to copy and past the selected data into a new spreadsheet so that you are working with a file structure that looks like Figure 1. If you are working in Excel to parse the data, this program has a useful way of transposing the table. Copy a row from the original spreadsheet, and then paste it into your new file by selecting the "Paste Special" option in the Edit menu and selecting "Transpose" before hitting ok. You can delete the data labelled 'fips' in this file.
+**Step 2 Parse and Filter:** Inspect the content of the file. Since CSV is a text based format, you could use a text editor. The first few lines look like this:
+```
+pop1900,pop1910,pop1920,pop1930,pop1940,pop1950,pop1960,pop1970,pop1980,pop1990,"fips","name"
+76212168,92228496,106021537,123202624,132164569,151325798,179323175,203211926,226545805,248709873,"00000","US United States"
+1828697,2138093,2348174,2646248,2832961,3061743,3266740,3444165,3893888,4040587,"01000","AL Alabama"
+17915,20038,18908,19694,20977,18186,18739,24460,32259,34222,"01001","AL Autauga County"
+13194,18178,20730,28289,32324,40997,49088,59382,78556,98280,"01003","AL Baldwin County"
+35152,32728,32067,32425,32722,28892,24700,22543,24756,25417,"01005","AL Barbour County"
+18498,22791,23144,20780,20155,17987,14357,13812,15723,16576,"01007","AL Bibb County"
+...
+```
+It it very common to use the first line to name the different entries/fields in a (CSV) data record. From the first line you can guess that that the population data spans for all the regions of the USA from 1900-1990. This example visualizes the total population data and data from New York, Louisiana and Alabama so we must construct the data file with only the data from those particular states. The 12th column of the CSV file names the state corresponding to the data record. The relevant entries/rows are "AL Alabama", "LA Louisiana" and "NY New York". Tools like [grep](https://en.wikipedia.org/wiki/Grep "wikipedia on grep"), [sed](https://en.wikipedia.org/wiki/Sed "wikipedia on sed") and [awk](https://en.wikipedia.org/wiki/AWK "wikipedia on AWK) can be quite useful for filtering and scrubbing lines, especially with large files (but you don't have to do it now):
+```
+$ grep "\"AL Alabama\"\|\"LA Louisiana\"\|\"NY New York\"\|\"fips\"" cencounts.csv | sed 's/pop//g'
+1900,1910,1920,1930,1940,1950,1960,1970,1980,1990,"fips","name"
+1828697,2138093,2348174,2646248,2832961,3061743,3266740,3444165,3893888,4040587,"01000","AL Alabama"
+1381625,1656388,1798509,2101593,2363880,2683516,3257022,3641306,4205900,4219973,"22000","LA Louisiana"
+7268894,9113614,10385227,12588066,13479142,14830192,16782304,18236967,17558072,17990455,"36000","NY New York"
+```
+Open either the file or the filtered lines (redirected by appending `>> data.csv` to the above command) in a spreadsheet programm. In the ed we want a data structure that looks like Figure 1. If you are working with Microsoft Excel or Libreoffice Calc to parse the data, you can transform the data rather easily. Select the first and three other rows of interest, copy them and and then paste the data into a new file by selecting the "Paste Special" option in the Edit menu and selecting "Transpose" before hitting ok. You can delete the second before last row, the data labelled 'fips' (which by the way stands for "[Federal Information Processing Standards](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards)") in this file and move the state names to the top.
 
 ![Image of data file](images/Image1.jpg)
 
-Check the data for any gaps or strange characters.
-
-Ensure that you do not have any extra labelling or text at the top and bottom of the data columns. Your final file should only have labels in the header. The header is the row of data labels in the first row.
+Check the data for any gaps or strange characters. Ensure that you do not have any extra labelling or text at the top and bottom of the data columns. Your final file should only have labels in the header, the first row (with the data labels). You can change the order of the state columns if you want to.
 
 **Step 3 Mine:** Check each variable for minimum and maximum values so that you know the approximate range of variation. Check for any strange outlying values.
 
@@ -499,6 +516,8 @@ JSON validation tools like: http://jsonlint.com/
 * [json.org](http://json.org/) a website with detailed information about the JSON file format
 * [RFC 4180: Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://tools.ietf.org/html/rfc4180)
 * [IANA: Definition of tab-separated-values (tsv)](http://www.iana.org/assignments/media-types/text/tab-separated-values)
+* [wikibook: An AWK primer](https://en.wikibooks.org/wiki/An_Awk_Primer)
+* [wikibook: sed](https://en.wikibooks.org/wiki/Sed)
 
 ## References
 Fry, B. (2008). *Visualizing Data,* O’Reilly Media.  
