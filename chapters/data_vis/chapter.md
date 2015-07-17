@@ -81,6 +81,8 @@ JSON files also are parsed using an oF addon called [ofxJSON](https://github.com
 
 This section works through an example of a data visualization of US population data.
 
+#### Prepare the Data
+
 **Step 1 Acquire:** The US population data can be downloaded from the [United States Census service](http://www.nber.org/data/census-decennial-population.html). Get the file named "[cencounts.csv](http://www.nber.org/census/pop/cencounts.csv)".
 
 **Step 2 Parse and Filter:** Inspect the content of the file. Since CSV is a text based format, you could use a text editor. The first few lines look like this:
@@ -108,17 +110,9 @@ Open either the file or the filtered lines (redirected by appending `>> data.csv
 
 Check the data for any gaps or strange characters. Ensure that you do not have any extra labelling or text at the top and bottom of the data columns. Your final file should only have labels in the header, the first row (with the data labels). You can change the order of the state columns if you want to.
 
-**Step 3 Mine:** Check each variable for minimum and maximum values so that you know the approximate range of variation. Check for any strange outlying values.
+**Step 3 Mine:** Check each variable for minimum and maximum values so that you know the approximate range of variation. Check for any strange outlying values. This serves as a sanity check and lets you get to know the data. If you a visualizing scientific data you should not remove any data records. Save your file as a TSV file. If you are using Libreoffice Calc or Microsoft Excel, you can save as a 'tab delimited text' file and then rename the file with the .tsv extension in the finder, or simply resave it with this extension in a text editor. The next step is to get the Data into openFrameworks. You won't load the data into openFrameworks as such, but you usually implement an environment which can use your data. Since the raw data is different, the processing tends to differ as well. First, generate a new project. Remember to include the add-ons if your data is in CSV or JSON format (if needed). Then save the parsed population data file to the ‘bin’ folder of your oF project. Once your project file is set up, we will now work through writing the code.
 
-Save your file as a tsv file. If you are using Excel, you can save as a 'tab delimited text' file and then rename the file with the .tsv extension in the finder, or simply resave it with this extension in a text editor.
-
-Loading Your file into an oF Project.
-
-First, generate a new project remembering to include the add-ons if your data is in csv or json format. Then save the parsed population data file to the ‘bin’ folder of your oF project.
-
-Once your project file is set up, we will now work through writing the code.
-
-Organising your data.
+#### Organising your data.
 
 First, we will need several structures to keep our data organised and allow easy access to it.
 
