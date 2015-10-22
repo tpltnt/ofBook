@@ -48,25 +48,7 @@ Data is available and stored using specific file types that have particular stru
 
 * XML: XML files are written in the [EXtensible Markup Language](https://en.wikipedia.org/wiki/XML "wikipedia on XML"). XML files are composed of tags that define a data hierarchy for the values within them. A tag has a name, attributes and values within it. If tags are nested, the enclosing tags are called parent tags and the nested tags are the children. The tags next to one another are siblings. Depending on the hierarchy tags can represent whole data records or single fields. Reading an XML file in oF requires the use of an oF addon called [ofxXmlSettings](http://openframeworks.cc/documentation/ofxXmlSettings/ofxXmlSettings.html "oF documentation on ofxXmlSettings").
 
-* JSON: [JSON](https://en.wikipedia.org/wiki/JSON "wikipedia on JSON") stands for ‘javascript object notation’. This is a human readable file that is built on two structures: a collection of name/value pairs which can be realized in oF as a struct and an ordered list of values, realized as a vector.
-
-```javascript
-{
-  "key": "value",
-  "boolean key": true,
-  "list of objects": [
-     {
-	"an integer": 23
-     },
-     {
-        "a floating point number": 4.2
-     }
-  ],
-  "list of null values": [ null, null, null ]
-}
-```
-
-JSON files also are parsed using an oF addon called [ofxJSON](https://github.com/jefftimesten/ofxJSON "ofxJSON github repository"), see example 2.XX for how to implement this.
+* JSON: [JSON](https://en.wikipedia.org/wiki/JSON "wikipedia on JSON") stands for ‘javascript object notation’. This is a human readable file that is built on two structures: a collection of name/value pairs which can be realized in oF as a struct and an ordered list of values, realized as a vector. JSON files also are parsed using an oF addon called [ofxJSON](https://github.com/jefftimesten/ofxJSON "ofxJSON github repository"), see example 2.XX for how to implement this.
 
 ### Example - Visualizing Time Series Plot
 
