@@ -42,7 +42,7 @@ Data is usually organized in records. A record is a (complete) self-contained pi
 ### Common data file structures: CSV, TSV, XML, JSON
 Data is available and stored using specific file types that have particular structures and syntax. The following file types are some of the most common formats for structuring data.
 
-* CSV: [Comma separated values (csv)](https://en.wikipedia.org/wiki/Comma-separated_values "wikipedia on comma-separated values") files are files where each data record is stored in one line of the file. Its fields are separated by commas. These files can be directly imported into oF by using the [ofxCsv add-on](https://github.com/paulvollmer/ofxCsv "github repo of the ofxCsv add-on"). This add-on allows for the reading and writing of CSV file.
+* CSV: [Comma separated values (csv)](https://en.wikipedia.org/wiki/Comma-separated_values "wikipedia on comma-separated values") files are files where each data record is stored in one line of the file. Its fields are separated by commas. These files can be directly imported into openFrameworks by using the [ofxCsv add-on](https://github.com/paulvollmer/ofxCsv "github repo of the ofxCsv add-on"). This add-on allows for the reading and writing of CSV file.
 
 * TSV: [Tab separated value (tsv)](https://en.wikipedia.org/wiki/Tab-separated_values "wikipedia on tab-separated values") files are text files where each data record is stored in one line of the file (like in CSV), but the fields are separated by tabs. These files can be directly imported into oF.
 
