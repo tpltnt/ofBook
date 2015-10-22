@@ -46,16 +46,7 @@ Data is available and stored using specific file types that have particular stru
 
 * TSV: [Tab separated value (tsv)](https://en.wikipedia.org/wiki/Tab-separated_values "wikipedia on tab-separated values") files are text files where each data record is stored in one line of the file (like in CSV), but the fields are separated by tabs. These files can be directly imported into oF.
 
-* XML: XML files are written in the [EXtensible Markup Language](https://en.wikipedia.org/wiki/XML "wikipedia on XML"). XML files are composed of tags that define a data hierarchy for the values within them. A tag has a name, attributes and values within it. If tags are nested, the enclosing tags are called parent tags and the nested tags are the children. The tags next to one another are siblings. Depending on the hierarchy tags can represent whole data records or single fields.
-
-```html
-<parentTagName>
-    <childtagName attributeName="attributeValue">TagValue</childtagName>
-    <siblingTag />
-</parentName>
-```
-
-Reading an XML file in oF requires the use of an oF addon called [ofxXmlSettings](http://openframeworks.cc/documentation/ofxXmlSettings/ofxXmlSettings.html "oF documentation on ofxXmlSettings").
+* XML: XML files are written in the [EXtensible Markup Language](https://en.wikipedia.org/wiki/XML "wikipedia on XML"). XML files are composed of tags that define a data hierarchy for the values within them. A tag has a name, attributes and values within it. If tags are nested, the enclosing tags are called parent tags and the nested tags are the children. The tags next to one another are siblings. Depending on the hierarchy tags can represent whole data records or single fields. Reading an XML file in oF requires the use of an oF addon called [ofxXmlSettings](http://openframeworks.cc/documentation/ofxXmlSettings/ofxXmlSettings.html "oF documentation on ofxXmlSettings").
 
 * JSON: [JSON](https://en.wikipedia.org/wiki/JSON "wikipedia on JSON") stands for ‘javascript object notation’. This is a human readable file that is built on two structures: a collection of name/value pairs which can be realized in oF as a struct and an ordered list of values, realized as a vector.
 
