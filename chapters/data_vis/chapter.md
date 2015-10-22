@@ -335,7 +335,7 @@ void ofApp::draw(){
 
 Now you have a very basic working graph, the next steps are to add labels and interactivity.
 
-**Step 6 Refine.**
+**Step 5 Refine.**
 We need to declare a font in ofApp.h file:
 ```cpp
     ofTrueTypeFont font;
