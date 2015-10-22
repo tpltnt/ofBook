@@ -15,23 +15,23 @@ Data are symbols or numerical interpretations that represent the properties of o
 ### Steps of visualizing data
 Ben Fry is a data artist and the author of Visualizing Data (2008), a well-known text outlining data visualization approaches for the [Processing](https://www.processing.org/ "processing website") programming environment. In this excellent reference text, Fry describes seven stages for visualizing data and these provide a useful structure for approaching data-driven projects. These steps are:
 
-* Acquire: Obtain the data.
+* *Acquire*: Obtain the data.
 Data is commonly made available in files downloadable from online sources such as weather services, newspapers, census records and from social media platforms. However there are also times when you may need to compile and format data from hardware or sensors. Real-time data is often available via an [Application Programming Interface (API)](https://en.wikipedia.org/wiki/Application_programming_interface "Wikipedia article about API"), which is an interface and a set of rules that define the process of how other applications can communicate with it. Every API is designed differently and therefore can be communicated with in different ways. This chapter presents two examples of visualising a static dataset imported into oF from external files, and an example that reads data from the [New York Times API](http://developer.nytimes.com/docs "documentation of the New Yort Times APIs").
 
-* Parse: Provide some structure for the data’s meaning, and order it into categories.
+* *Parse*: Provide some structure for the data’s meaning, and order it into categories.
 Once you have obtained your data and before you load it into openFrameworks it is important to parse the data. Parsing means checking the file’s format. Is the dataset tagged correctly? Check that each line of your data is broken up consistently across columns. This can be done in a number of ways such as, printing your file out in the terminal or opening your file in a text editor or spreadsheet program and checking for inconsistencies or gaps. Depending on your fileformat, there are tools which check the (formal) consistency of a file.
 
-* Filter: Remove all but the data of interest.
+* *Filter*: Remove all but the data of interest.
 Your dataset is likely to contain extra information not relevant to your visualization. For example in the tab separated (.tsv) file shown in figure 1, the file has columns like station ID and latitude and longitude that are not relevant to the first visualization example. As the data is from only one location, location information can be removed so that they do not interfere with the your visualization process.
 
-* Mine: Apply methods from statistics or data mining to discern patterns in your data and place the data in mathematical context.
+* *Mine*: Apply methods from statistics or data mining to discern patterns in your data and place the data in mathematical context.
 As Fry (2008) outlines, the mining stage of visualizing data involves applying statistical and other mathematical methods to your dataset to analyze patterns within it. This might be as simple as identifying the minimum and maximum values so that you know the range of variation in its values. Depending on your data, you may wish to calculate an average or a median value.
 
-* Represent: Choose a basic visual model, such as a bar graph, list, or tree.
+* *Represent*: Choose a basic visual model, such as a bar graph, list, or tree.
 
-* Refine: Improve the basic representation to make it clearer and more visually engaging.
+* *Refine*: Improve the basic representation to make it clearer and more visually engaging.
 
-* Interact: Add methods for manipulating the data or controlling what features are visible.
+* *Interact*: Add methods for manipulating the data or controlling what features are visible.
 
 These are the basic steps to visualize data. They may be adjusted and extended, depending on the circumstances (e.g. the guardian data blog uses a modified [workflow for data journalism](http://www.theguardian.com/news/datablog/2011/apr/07/data-journalism-workflow "Data journalism broken down: what we do to the data before you see it")).
 
